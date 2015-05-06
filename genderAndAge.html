@@ -5,6 +5,12 @@
     <title>Psychology experiment</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <style type="text/css">
+        input[type="radio"] {
+            margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -14,21 +20,24 @@
 
             <br>
 
-            <form action="" method="get">
-                <label for="gender">Мъж</label>
-                <input type="radio" name="gender" value="male"/>
-                <label for="gender">Жена</label>
-                <input type="radio" name="gender" value="female"/>
-                <label for="age">Възраст: </label>
-                <input type="number" name="age" min="18" max="70"/>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="gender">Мъж</label>
+                    <input type="radio" name="gender" value="male">
+                    <label for="gender">Жена</label>
+                    <input type="radio" name="gender" value="female">
+                </div>
+                <div class="col-lg-6">
+                    <label for="age">Възраст: </label>
+                    <input type="number" name="age" min="18" max="70">
+                </div>
+            </div>
 
-                <br/>
-
-                <input type="submit" value="Напред"/>
-            </form>
-
-            <br>
-
+            <br/>
+            
+            <p class="text-center">
+                <button class="btn btn-success">Напред</button>
+            </p>
         </div>
     </div>
 </div>
