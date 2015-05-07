@@ -5,16 +5,8 @@
     <title>Psychology experiment</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
 
-    <style type="text/css">
-        input[type="radio"] {
-            margin-right: 20px;
-        }
-        input[type="number"] {
-            margin-left: 20px;
-        }
-
-    </style>
 </head>
 <body>
 <div class="container">
@@ -39,35 +31,35 @@
 
             <br/>
 
-            <div class="question-female" style="display: none;">
+            <div class="question" style="display: none;">
                 <table class="table">
                     <tr>
                         <td>До каква степен е Мария виновна за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionOne" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е Мария отговорна за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionTwo" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е действала неуместно Мария в описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionThree" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е непознатият мъж виновен за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionFour" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е непознатият мъж отговорен за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionFive" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е действал неуместно непознатият мъж в описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionSix" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен бихте описали описаната случка като изнасилване? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionSeven" min="0" max="100"/></td>
                     </tr>
                 </table>
             </div>
@@ -88,35 +80,35 @@
 
             <br/>
 
-            <div class="question-male">
+            <div class="questions">
                 <table class="table">
                     <tr>
                         <td>До каква степен е Петър виновен за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionOne" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е Петър отговорен за описаната ситуация?(0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionTwo" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е действал неуместно Петър в описаната ситуация?(0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionThree" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е непознатият мъж виновен за описаната ситуация? (0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionFour" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е непознатият мъж отговорен за описаната ситуация?(0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionFive" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен е действал неуместно непознатият мъж в описаната ситуация?(0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionSix" min="0" max="100"/></td>
                     </tr>
                     <tr>
                         <td>До каква степен бихте описали описаната случка като изнасилване?(0%-100%)</td>
-                        <td><input type="number" min="0" max="100"/></td>
+                        <td><input type="number" name="scenarioQuestionSeven" min="0" max="100"/></td>
                     </tr>
                 </table>
             </div>
@@ -124,7 +116,7 @@
             <br/>
 
             <p class="text-center">
-                <button class="btn btn-success">Напред</button>
+                <a href="http://localhost/Psychology-Website/psychologyTest-Website/statemants.html" id="forwardFirst" class="btn btn-success">Напред</a>
             </p>
         </div>
     </div>
@@ -133,5 +125,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jQuery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/mainJs.js"></script>
 </body>
 </html>

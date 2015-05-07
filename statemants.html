@@ -5,30 +5,7 @@
     <title>Psychology experiment</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <style type="text/css">
-        input[type="radio"] {
-            margin-right: 20px;
-        }
-        .rotate {
-            height: 150px;
-            display:inline-block;
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-            -webkit-transform: rotate(270deg);
-            -ms-transform: rotate(270deg);
-            transform: rotate(270deg);
-        }
-        .tblborder, .tblborder td, .tblborder th{
-            border-collapse:collapse;
-            border:1px solid #000;
-        }
-        a:active {
-            color: red;
-            background: black;
-            border: 1px solid;
-        }
-    </style>
-
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 <div class="container">
@@ -46,7 +23,7 @@
 
             <br/>
 
-            <div class="question-male">
+            <div class="blameQuestions">
                 <table class="tblborder table">
                     <tr>
                         <th>
@@ -70,69 +47,212 @@
                         <th>
                             <div class="rotate">твърдо несъгласен</div>
                         </th>
-
-
-                        <!--<td class="vertical"> </td>-->
-                        <!--<td class="vertical"></td>-->
-                        <!--<td class="vertical"></td>-->
-                        <!--<td class="vertical"></td>-->
-                        <!--<td class="vertical"></td>-->
-                        <!--<td class="vertical"></td>-->
-                        <!--<td class="vertical"></td>-->
                     </tr>
                     <tr>
                         <td>Мисля, че в основата си светът е справедливо място.</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+                        <td>
+                            <label for="blameQuestionOneChoiceSix">6</label>
+                            <input  type="radio" name="blameQuestionOne" value="6" id="blameQuestionOneChoiceSix"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionOneChoiceFive">5</label>
+                            <input type="radio" name="blameQuestionOne" value="5" id="blameQuestionOneChoiceFive" />
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionOneChoiceFour">4</label>
+                            <input name="blameQuestionOne" id="blameQuestionOneChoiceFour" value="4" type="radio"/>
+                        </td>
+
+
+                        <td>
+                            <label for="blameQuestionOneChoiceThree">3</label>
+                            <input name="blameQuestionOne" value="3" id="blameQuestionOneChoiceThree" type="radio"/>
+                        </td>
+
+
+                        <td>
+                            <label for="blameQuestionOneChoiceTwo">2</label>
+                            <input name="blameQuestionOne" value="2" id="blameQuestionOneChoiceTwo" type="radio"/>
+                        </td>
+
+
+                        <td>
+                            <label for="blameQuestionOneChoiceOne">1</label>
+                            <input name="blameQuestionOne" value="1" id="blameQuestionOneChoiceOne" type="radio"/>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Вярвам, че общо взето хората получават това, което заслужават</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceSix">6</label>
+                            <input name="blameQuestionTwo" value="324" id="blameQuestionTwoChoiceSix" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceFive">5</label>
+                            <input name="blameQuestionTwo" value="5" id="blameQuestionTwoChoiceFive" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceFour">4</label>
+                            <input name="blameQuestionTwo" value="4" id="blameQuestionTwoChoiceFour" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceThree">3</label>
+                            <input name="blameQuestionTwo" value="3" id="blameQuestionTwoChoiceThree" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceTwo">2</label>
+                            <input name="blameQuestionTwo" value="2" id="blameQuestionTwoChoiceTwo" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionTwoChoiceOne">1</label>
+                            <input name="blameQuestionTwo" value="1" id="blameQuestionTwoChoiceOne" type="radio"/>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Уверен съм,че справедливостта надделява над несправедливостта.</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceSix">6</label>
+                            <input name="blameQuestionThree" value="6" id="blameQuestionThreeChoiceSix" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceFive">5</label>
+                            <input name="blameQuestionThree" value="5" id="blameQuestionThreeChoiceFive" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceFour">4</label>
+                            <input name="blameQuestionThree" value="4" id="blameQuestionThreeChoiceFour" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceThree">3</label>
+                            <input name="blameQuestionThree" value="3" id="blameQuestionThreeChoiceThree" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceTwo">2</label>
+                            <input name="blameQuestionThree" value="2" id="blameQuestionThreeChoiceTwo" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionThreeChoiceOne">1</label>
+                            <input name="blameQuestionThree" value="1" id="blameQuestionThreeChoiceOne" type="radio"/>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Убеден съм, че в дългосрочен план хората биват компенсирани за несправедливостите.</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceSix">6</label>
+                            <input name="blameQuestionFour" value="6" id="blameQuestionFourChoiceSix" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceFive">5</label>
+                            <input name="blameQuestionFour" value="5" id="blameQuestionFourChoiceFive" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceFour">4</label>
+                            <input name="blameQuestionFour" value="4" id="blameQuestionFourChoiceFour" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceThree">3</label>
+                            <input name="blameQuestionFour" value="3" id="blameQuestionFourChoiceThree" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceTwo">2</label>
+                            <input name="blameQuestionFour" value="2" id="blameQuestionFourChoiceTwo" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFourChoiceOne">1</label>
+                            <input name="blameQuestionFour" value="1" id="blameQuestionFourChoiceOne" type="radio"/>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Твърдо вярвам, че несправедливостите във всички сфери на живота (например професионална, семейна, политическа) са по-скоро изключения, отколкото норма</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceSix">6</label>
+                            <input name="blameQuestionFive" value="6" id="blameQuestionFiveChoiceSix" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceFive">5</label>
+                            <input name="blameQuestionFive" value="5" id="blameQuestionFiveChoiceFive" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceFour">4</label>
+                            <input name="blameQuestionFive" value="4" id="blameQuestionFiveChoiceFour" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceThree">3</label>
+                            <input name="blameQuestionFive" value="3" id="blameQuestionFiveChoiceThree" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceTwo">2</label>
+                            <input name="blameQuestionFive" value="2" id="blameQuestionFiveChoiceTwo" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionFiveChoiceOne">1</label>
+                            <input name="blameQuestionFive" value="1" id="blameQuestionFiveChoiceOne" type="radio"/>
+                        </td>
                     </tr>
+
                     <tr>
                         <td>Мисля, че хората се стараят да бъдат справедливи, когато вземат важни решения.</td>
-                        <td><a href="">6</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">1</a></td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceSix">6</label>
+                            <input name="blameQuestionSix" value="6" id="blameQuestionSixChoiceSix" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceFive">5</label>
+                            <input name="blameQuestionSix" value="5" id="blameQuestionSixChoiceFive" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceFour">4</label>
+                            <input name="blameQuestionSix" value="4" id="blameQuestionSixChoiceFour" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceThree">3</label>
+                            <input name="blameQuestionSix" value="3" id="blameQuestionSixChoiceThree" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceTwo">2</label>
+                            <input name="blameQuestionSix" value="2" id="blameQuestionSixChoiceTwo" type="radio"/>
+                        </td>
+
+                        <td>
+                            <label for="blameQuestionSixChoiceOne">1</label>
+                            <input name="blameQuestionSix" value="1" id="blameQuestionSixChoiceOne" type="radio"/>
+                        </td>
+
                     </tr>
                 </table>
             </div>
@@ -140,7 +260,7 @@
             <br/>
 
             <p class="text-center">
-                <button class="btn btn-success">Изпрати</button>
+                <a href="http://localhost/Psychology-Website/psychologyTest-Website/exitPage.html" id="forwardToExit" class="btn btn-success">Изпрати</a>
             </p>
         </div>
 
@@ -153,5 +273,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jQuery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/mainJs.js"></script>
 </body>
 </html>

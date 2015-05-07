@@ -1,0 +1,40 @@
+input[type="radio"] {
+    margin-right: 20px;
+}
+input[type="number"] {
+    margin-left: 20px;
+}
+table input[type="radio"] {
+    display: none;
+}
+
+td {
+    text-align: center;
+}
+
+label {
+    cursor: pointer;
+}
+
+.table > tbody > tr > td {
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+.rotate {
+    height: 150px;
+    display:inline-block;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+.tblborder, .tblborder td, .tblborder th{
+    border-collapse:collapse;
+    border:1px solid #000;
+}
+a:active {
+    color: red;
+    background: black;
+    border: 1px solid;
+}

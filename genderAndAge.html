@@ -5,26 +5,21 @@
     <title>Psychology experiment</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <style type="text/css">
-        input[type="radio"] {
-            margin-right: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css"/>
 
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-lg-10 col-lg-offset-1">
-            <h2>Моля попълнете</h2>
+            <h2 id="header">Моля попълнете</h2>
 
             <br>
 
             <div class="row">
                 <div class="col-lg-3">
                     <label for="gender">Мъж</label>
-                    <input type="radio" name="gender" value="male">
+                    <input type="radio" checked="checked" name="gender" value="male">
                     <label for="gender">Жена</label>
                     <input type="radio" name="gender" value="female">
                 </div>
@@ -37,7 +32,7 @@
             <br/>
 
             <p class="text-center">
-                <button class="btn btn-success">Напред</button>
+                <a href="http://localhost/Psychology-Website/psychologyTest-Website/scenario.html" id="forwardToScenario" class="btn btn-success">Напред</a>
             </p>
 
             <br>
@@ -49,5 +44,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jQuery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/mainJs.js"></script>
 </body>
 </html>
