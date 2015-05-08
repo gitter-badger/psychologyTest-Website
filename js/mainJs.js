@@ -139,39 +139,22 @@ $(document).ready(function() {
             blameQuestionSix: localStorage.getItem('blameQuestionSix')
         };
 
-        $.post( 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php', result, function() {
-            alert( "success" );
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/psychologyTest-Website/php/uploadResults.php',
+            data: result
         })
         .done(function() {
-            alert( "second success" );
+            callback();
         })
-            .fail(function() {
-                alert( "error" );
-            })
-            .always(function() {
-                alert( "finished" );
+        .fail(function(error) {
+            alert(error);
+        })
+        .always(function() {
+            $.each(result, function(key, val) {
+                localStorage.removeItem(key);
             });
-
-        //$.ajax({
-        //    type:'POST',
-        //    url: 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php',
-        //    data: result,
-        //    success: function() {
-        //
-        //        callback();
-        //
-        //    },
-        //    error: function() {
-        //
-        //        alert('fukcshit');
-        //
-        //    },
-        //    complete: function() {
-        //
-        //        callback();
-        //
-        //    }
-        //});
+        });
     };
 
 });
