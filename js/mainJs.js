@@ -76,6 +76,8 @@ $(document).ready(function() {
     $('#forwardToExit').on('click', function(e) {
 
         e.preventDefault();
+        var anchorHref = $(this).attr('href');
+
         var validateStatemants = true;
 
         var blameQuestions = [
@@ -95,7 +97,7 @@ $(document).ready(function() {
             }
 
             var currentQuestion = parseInt(question.val());
-            console.log(currentQuestion);
+
             if(currentQuestion < 1 || currentQuestion > 6){
                 validateStatemants = false;
                 return false;
@@ -107,7 +109,7 @@ $(document).ready(function() {
 
         if (validateStatemants) {
             uploadResult(function() {
-                window.location.href = $(this).attr('href');
+                window.location.href = anchorHref;
             });
         }
 
@@ -137,22 +139,39 @@ $(document).ready(function() {
             blameQuestionSix: localStorage.getItem('blameQuestionSix')
         };
 
-        $.ajax({
-            method:'POST',
-            url: 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php',
-            data: result
-        }).done(function(err, response) {
-            if(err){
-                return console.log(err);
-            }
+        $.post( 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php', result, function() {
+            alert( "success" );
+        })
+        .done(function() {
+            alert( "second success" );
+        })
+            .fail(function() {
+                alert( "error" );
+            })
+            .always(function() {
+                alert( "finished" );
+            });
 
-            callback();
-        }).fail(function(err, response) {
-            if(err){
-                return console.log(err);
-            }
-            console.log(response);
-        });
+        //$.ajax({
+        //    type:'POST',
+        //    url: 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php',
+        //    data: result,
+        //    success: function() {
+        //
+        //        callback();
+        //
+        //    },
+        //    error: function() {
+        //
+        //        alert('fukcshit');
+        //
+        //    },
+        //    complete: function() {
+        //
+        //        callback();
+        //
+        //    }
+        //});
     };
 
 });
