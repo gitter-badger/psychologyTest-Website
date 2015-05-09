@@ -127,4 +127,12 @@ class ParamsValidator {
 
         return $validated;
     }
+
+    public function validateGender($data) {
+        if ($data['gender'] == 0 || $data['gender'] == 1) {
+            return true;
+        }
+
+        return false;
+    }
 }

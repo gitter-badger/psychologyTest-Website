@@ -78,31 +78,29 @@ $(document).ready(function() {
         e.preventDefault();
         var anchorHref = $(this).attr('href');
 
-
-
         var validateStatemants = true;
 
         var blameQuestions = [
-            $('input[name="blameQuestionOne:checked"]'),
-            $('input[name="blameQuestionTwo:checked"]'),
-            $('input[name="blameQuestionThree:checked"]'),
-            $('input[name="blameQuestionFour:checked"]'),
-            $('input[name="blameQuestionFive:checked"]'),
-            $('input[name="blameQuestionSix:checked"]')
+            $('input[name="blameQuestionOne"]'),
+            $('input[name="blameQuestionTwo"]'),
+            $('input[name="blameQuestionThree"]'),
+            $('input[name="blameQuestionFour"]'),
+            $('input[name="blameQuestionFive"]'),
+            $('input[name="blameQuestionSix"]')
         ];
 
         $.each(blameQuestions, function(index, question) {
 
             var currentQuestion = parseInt(question.val());
 
-            //if(!question.attr("checked") || (currentQuestion < 1 || currentQuestion > 6)) {
-            //
-            //    $(question[0]).parents('tr').find('td:first-child').css('color', 'red');
-            //    validateStatemants = false;
-            //}
-            //else {
+            if(!question.attr("checked") || (currentQuestion < 1 || currentQuestion > 6)) {
+
+                $(question[0]).parents('tr').find('td:first-child').css('color', 'red');
+                validateStatemants = false;
+            }
+            else {
                 localStorage.setItem(question.attr('name'), parseInt(currentQuestion));
-            //}
+            }
         });
 
         uploadResult(function() {
@@ -126,6 +124,7 @@ $(document).ready(function() {
         var result = {
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
+            scenarioId: 0,
             scenarioQuestionOne: localStorage.getItem('scenarioQuestionOne'),
             scenarioQuestionTwo: localStorage.getItem('scenarioQuestionTwo'),
             scenarioQuestionThree: localStorage.getItem('scenarioQuestionThree'),
@@ -143,19 +142,18 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php',
+            url: 'http://localhost/psychologyTest-Website/php/uploadResults.php',
             data: result
         })
         .done(function() {
+            $.each(result, function(key, val) {
+                localStorage.removeItem(key);
+            });
+
             callback();
         })
         .fail(function(error) {
             alert(error);
-        })
-        .always(function() {
-            //$.each(result, function(key, val) {
-            //    localStorage.removeItem(key);
-            //});
         });
     };
 
