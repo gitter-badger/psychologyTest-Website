@@ -41,7 +41,8 @@ class ParamsValidator {
         'checkGenderAndScenarioId',
         'checkAge',
         'checkScenarioQuestions',
-        'checkBlameQuestions'
+        'checkBlameQuestions',
+        'checkForEmptyFields'
     ];
 
     private $data = [];
@@ -71,6 +72,19 @@ class ParamsValidator {
         }
 
         return false;
+    }
+
+    private function checkForEmptyFields() {
+        $validated = true;
+
+        foreach ($this->data as $key => $value) {
+            if ($value == '') {
+                $validated = false;
+                break;
+            }
+        }
+
+        return $validated;
     }
 
     private function checkFieldsNumericality() {

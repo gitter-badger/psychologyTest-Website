@@ -81,22 +81,26 @@ $(document).ready(function() {
         var validateStatemants = true;
 
         var blameQuestions = [
-            $('input[name="blameQuestionOne"]'),
-            $('input[name="blameQuestionTwo"]'),
-            $('input[name="blameQuestionThree"]'),
-            $('input[name="blameQuestionFour"]'),
-            $('input[name="blameQuestionFive"]'),
-            $('input[name="blameQuestionSix"]')
+            $('input[name="blameQuestionOne"]:checked'),
+            $('input[name="blameQuestionTwo"]:checked'),
+            $('input[name="blameQuestionThree"]:checked'),
+            $('input[name="blameQuestionFour"]:checked'),
+            $('input[name="blameQuestionFive"]:checked'),
+            $('input[name="blameQuestionSix"]:checked')
         ];
 
         $.each(blameQuestions, function(index, question) {
 
-            var currentQuestion = parseInt(question.val());
-
-            if(!question.attr("checked") || (currentQuestion < 1 || currentQuestion > 6)) {
-
-                $(question[0]).parents('tr').find('td:first-child').css('color', 'red');
+            if(question.length == 0){
                 validateStatemants = false;
+                return false;
+            }
+
+            var currentQuestion = parseInt(question.val());
+            console.log(currentQuestion);
+            if(currentQuestion < 1 || currentQuestion > 6){
+                validateStatemants = false;
+                return false;
             }
             else {
                 localStorage.setItem(question.attr('name'), parseInt(currentQuestion));
@@ -111,6 +115,8 @@ $(document).ready(function() {
             uploadResult(function() {
                 window.location.href = anchorHref;
             });
+        } else {
+            alert('Моля попълнете всички полета!');
         }
 
     });
@@ -124,7 +130,7 @@ $(document).ready(function() {
         var result = {
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
-            scenarioId: 0,
+            scenarioId: localStorage.getItem('scenarioId'),
             scenarioQuestionOne: localStorage.getItem('scenarioQuestionOne'),
             scenarioQuestionTwo: localStorage.getItem('scenarioQuestionTwo'),
             scenarioQuestionThree: localStorage.getItem('scenarioQuestionThree'),
@@ -153,7 +159,7 @@ $(document).ready(function() {
             callback();
         })
         .fail(function(error) {
-            alert(error);
+            console.log(error);
         });
     };
 
