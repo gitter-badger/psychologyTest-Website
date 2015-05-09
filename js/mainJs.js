@@ -78,33 +78,35 @@ $(document).ready(function() {
         e.preventDefault();
         var anchorHref = $(this).attr('href');
 
+
+
         var validateStatemants = true;
 
         var blameQuestions = [
-            $('input[name="blameQuestionOne"]:checked'),
-            $('input[name="blameQuestionTwo"]:checked'),
-            $('input[name="blameQuestionThree"]:checked'),
-            $('input[name="blameQuestionFour"]:checked'),
-            $('input[name="blameQuestionFive"]:checked'),
-            $('input[name="blameQuestionSix"]:checked')
+            $('input[name="blameQuestionOne:checked"]'),
+            $('input[name="blameQuestionTwo:checked"]'),
+            $('input[name="blameQuestionThree:checked"]'),
+            $('input[name="blameQuestionFour:checked"]'),
+            $('input[name="blameQuestionFive:checked"]'),
+            $('input[name="blameQuestionSix:checked"]')
         ];
 
         $.each(blameQuestions, function(index, question) {
 
-            if(question.length == 0){
-                validateStatemants = false;
-                return false;
-            }
-
             var currentQuestion = parseInt(question.val());
 
-            if(currentQuestion < 1 || currentQuestion > 6){
-                validateStatemants = false;
-                return false;
-            }
-            else {
+            //if(!question.attr("checked") || (currentQuestion < 1 || currentQuestion > 6)) {
+            //
+            //    $(question[0]).parents('tr').find('td:first-child').css('color', 'red');
+            //    validateStatemants = false;
+            //}
+            //else {
                 localStorage.setItem(question.attr('name'), parseInt(currentQuestion));
-            }
+            //}
+        });
+
+        uploadResult(function() {
+            window.location.href = anchorHref;
         });
 
         if (validateStatemants) {
@@ -141,7 +143,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/psychologyTest-Website/php/uploadResults.php',
+            url: 'http://localhost/Psychology-Website/psychologyTest-Website/php/uploadResults.php',
             data: result
         })
         .done(function() {
@@ -151,9 +153,9 @@ $(document).ready(function() {
             alert(error);
         })
         .always(function() {
-            $.each(result, function(key, val) {
-                localStorage.removeItem(key);
-            });
+            //$.each(result, function(key, val) {
+            //    localStorage.removeItem(key);
+            //});
         });
     };
 
