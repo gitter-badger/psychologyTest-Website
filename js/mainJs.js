@@ -1,26 +1,22 @@
 $(document).ready(function() {
-
     $('#forwardToScenario').on('click', function(e) {
-
         e.preventDefault();
 
         var validated = true;
 
         var checkGender = $('input[name="gender"]:checked');
         if (checkGender.val() == 'male' || checkGender.val() == 'female') {
-            if(checkGender.val() == 'female') {
+            if (checkGender.val() == 'female') {
                 localStorage.setItem('gender', 0);
             }
             else {
                 localStorage.setItem('gender', 1);
             }
-
         } else {
             validated = false;
         }
 
         var age = $('input[name="age"]');
-
         if (parseInt(age.val()) >= 18 && parseInt(age.val()) <= 70) {
             age.css("border-color", "green");
             localStorage.setItem('age', age.val());
@@ -29,14 +25,9 @@ $(document).ready(function() {
             validated = false;
         }
 
-        console.log(validated);
-
         if (validated) {
             window.location.href = $(this).attr('href');
         }
-
-
-
     });
 
     $('#forwardFirst').on('click', function(e) {
@@ -56,7 +47,7 @@ $(document).ready(function() {
 
         $.each(questionsSelectors, function(index, question) {
             var currentInput = parseInt(question.val());
-            if(currentInput >= 0 && currentInput <= 100){
+            if (currentInput >= 0 && currentInput <= 100) {
                 localStorage.setItem(question.attr('name'), parseInt(currentInput));
                 question.css("border-color", "green");
             } else {
@@ -64,21 +55,19 @@ $(document).ready(function() {
                 question.css("border-color", "red");
                 return false;
             }
-
         });
 
         if (validateScenario) {
             window.location.href = $(this).attr('href');
         }
-
     });
 
     $('#forwardToExit').on('click', function(e) {
-
         e.preventDefault();
-        var anchorHref = $(this).attr('href');
 
         var validateStatemants = true;
+
+        var anchorHref = $(this).attr('href');
 
         var blameQuestions = [
             $('input[name="blameQuestionOne"]:checked'),
@@ -90,25 +79,18 @@ $(document).ready(function() {
         ];
 
         $.each(blameQuestions, function(index, question) {
-
-            if(question.length == 0){
+            if (question.length == 0) {
                 validateStatemants = false;
                 return false;
             }
 
             var currentQuestion = parseInt(question.val());
-            console.log(currentQuestion);
-            if(currentQuestion < 1 || currentQuestion > 6){
+            if (currentQuestion < 1 || currentQuestion > 6) {
                 validateStatemants = false;
                 return false;
-            }
-            else {
+            } else {
                 localStorage.setItem(question.attr('name'), parseInt(currentQuestion));
             }
-        });
-
-        uploadResult(function() {
-            window.location.href = anchorHref;
         });
 
         if (validateStatemants) {
@@ -118,12 +100,11 @@ $(document).ready(function() {
         } else {
             alert('Моля попълнете всички полета!');
         }
-
     });
 
     $('.blameQuestions input').on('click', function(e) {
-        $('input[name="' + $(this).attr('name') + '"]').parent().css('background-color', 'white');
-        $(this).parent().css( "background-color", "green" );
+        $('input[name="' + $(this).attr('name') + '"]').parent().css({'background-color': 'white', 'color': 'black'});
+        $(this).parent().css({'background-color': 'green', 'color': 'white'});
     });
 
     var uploadResult = function(callback) {
@@ -150,17 +131,14 @@ $(document).ready(function() {
             type: 'POST',
             url: 'http://localhost/psychologyTest-Website/php/uploadResults.php',
             data: result
-        })
-        .done(function() {
+        }).done(function() {
             $.each(result, function(key, val) {
                 localStorage.removeItem(key);
             });
 
             callback();
-        })
-        .fail(function(error) {
+        }).fail(function(error) {
             console.log(error);
         });
     };
-
 });

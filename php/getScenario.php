@@ -1,11 +1,11 @@
 <?php
 
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ERROR | E_PARSE);
 
 require_once('db.php');
 require_once('ParamsValidator.php');
 
-$db = new MysqliDb ('localhost', 'root', '', 'psychology');
+$db = new MysqliDb ('localhost', 'root', 'root', 'psychology');
 $paramsValidator = new ParamsValidator();
 $data = $_GET;
 
